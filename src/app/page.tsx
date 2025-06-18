@@ -1,9 +1,7 @@
 import TrustedBy from "@/components/TrustedBy";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import { useEffect } from "react";
-import Lenis from "lenis";
+// import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
 import Footer from "@/components/Footer";

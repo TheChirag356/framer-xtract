@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { motion, stagger, useAnimate, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 const links = ["Home", "About", "Blog", "Contact"];
 

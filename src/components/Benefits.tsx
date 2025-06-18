@@ -3,7 +3,7 @@
 import { CloudLightning } from "lucide-react";
 import Badge from "./Badge";
 import Box, { BoxContent } from "@/components/Box";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useAnimate, useInView } from "motion/react";
 const Benefits = () => {
   const box: BoxContent[] = [

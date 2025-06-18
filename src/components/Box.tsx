@@ -1,7 +1,7 @@
 "use client";
 
-import React, { FC, useRef } from "react";
-import { motion, useInView } from "motion/react";
+import React from "react";
+import { motion } from "motion/react";
 
 export type BoxContent = {
   icon: React.ReactNode;

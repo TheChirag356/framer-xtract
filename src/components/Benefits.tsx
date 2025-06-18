@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import { CloudLightning } from "lucide-react";
 import Badge from "./Badge";
 import Box, { BoxContent } from "@/components/Box";
 import { useEffect, useRef } from "react";
-import { useInView } from "motion/react";
+import { useAnimate, useInView } from "motion/react";
 const Benefits = () => {
   const box: BoxContent[] = [
     {
@@ -45,17 +45,28 @@ const Benefits = () => {
     },
   ];
 
-  const scrollRef = useRef(null)
-  const isInView = useInView(scrollRef, {once: true})
+  const [scrollRef, animate] = useAnimate();
+  const isInView = useInView(scrollRef, { once: true });
 
   useEffect(() => {
     if (isInView) {
-        
+      startAnimating();
     }
-  }, [isInView])
+  }, [isInView]);
+
+  function startAnimating() {
+    animate(
+      ".box",
+      {
+        y: 0,
+        opacity: 1,
+      },
+      { delay: 0.5 },
+    );
+  }
 
   return (
-    <div ref={scrollRef} className="mt-12 flex min-h-[50dvh] w-[100dvw] flex-col items-center justify-start lg:mt-20">
+    <div className="my-12 flex h-[100dvh] w-[100dvw] flex-col items-center justify-start lg:mt-20">
       <div className="flex h-[20rem] w-1/3 flex-col items-center justify-start gap-4 text-center">
         <Badge text="Benefits" />
         <h1 className="text-5xl font-semibold">
@@ -66,7 +77,10 @@ const Benefits = () => {
           drives business growth with smarter, faster processes.
         </p>
       </div>
-      <div className="flex w-[80rem] flex-col gap-8 md:grid md:grid-cols-3 md:grid-rows-2">
+      <div
+        className="flex w-[80rem] flex-col gap-8 md:grid md:grid-cols-3 md:grid-rows-2"
+        ref={scrollRef}
+      >
         {box.map((item, idx) => (
           <Box
             key={idx}

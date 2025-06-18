@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
+import Footer from "@/components/Footer";
+import CtaCard from "@/components/CtaCard";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       {/* <Services /> */}
       <Process />
       <Benefits />
+      <CtaCard />
+      <Footer />
     </div>
   );
 }

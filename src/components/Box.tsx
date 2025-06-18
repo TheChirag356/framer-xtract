@@ -12,18 +12,11 @@ export type BoxContent = {
 const Box = ({ icon, text, description }: BoxContent) => {
   return (
     <motion.div
-      initial={{
+      style={{
         y: 20,
         opacity: 0,
       }}
-      animate={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        delay: 0.3,
-      }}
-      className="relative flex h-[12rem] flex-col items-start justify-center gap-2 overflow-hidden rounded-md border border-neutral-800 px-4 py-2"
+      className="box relative flex h-[12rem] flex-col items-start justify-center gap-2 overflow-hidden rounded-md border border-neutral-800 px-4 py-2"
     >
       <div className="z-10 aspect-square">{icon}</div>
       <h1 className="z-10 text-2xl font-medium">{text}</h1>
